@@ -1,0 +1,174 @@
+<html>
+
+<head>
+    <title>YOUR WEATHER</title>
+    <meta name="author" content="Maciej Baryła">
+    <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar bg-dark">
+        <div id="navIcon" class="navbar-brand" href="#">
+            <img src="./img/icon.png" alt="Logo" class="icon">
+        </div>
+        <span id="navTitle" class="navbar-text text-light main-text">
+            YOUR WEATHER
+        </span>
+        <form id="navSearch" class="form-inline nav-search" action="/action_page.php">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <img class="search-icon" src="./img/search.png" />
+                    </span>
+                </div>
+                <input id="navLocation" type="text" class="form-control" placeholder="Location">
+            </div>
+            <button id="navSearchBtn" class="btn btn-info" type="button">Check</button>
+        </form>
+        <div class="top-bar"></div>
+    </nav>
+    <div id="startContainer" class="justify-content-center">
+        <div class="bg-dark text-light p-3 start-search">
+            <form>
+                <div class="form-group">
+                    <label for="location">Location
+                    <small>(ie. Cracow, London)</small>:</label>
+                    <input id="location" type="text" class="form-control">
+                </div>
+                <button id="startSearchBtn" type="button" class="btn btn-info">Check</button>
+            </form>
+        </div>
+    </div>
+    <div id="forecastContainer" style="display: none;">
+        <div id="loadingPanel" class="progress">
+            <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" style="width:100%">Loading...</div>
+        </div>
+        <div id="forecastDataContainer" class="container" style="display: none;">
+            <div class="row">
+                <div class="col">
+                    <h1 id="locationHeaer" class="font-weight-bold"></h1>
+                </div>
+            </div>
+            <div class="row day-details">
+                <div class="col-xs-12 col-lg-6 d-flex align-items-center justify-content-center">
+                    <div class="details-panel-left">
+                        <img id="detailsIcon" src="" />
+                        <div id="detailsTemp"></div>
+                    </div>
+                    <div class="details-panel-right">
+                        <p><span id="weatherInfo"></span></p>
+                        <p>Max. temperature <span id="maxTempInfo"></span>°C</p>
+                        <p>Humidity <span id="humidityInfo"></span>%</p>
+                        <p>Pressure <span id="pressureInfo"></span> mbar</p>
+                        <p>Wind <span id="windInfo"></span> km/h</p>
+                    </div>
+                </div>
+            </div>
+            <div id="daysPanel" class="row card-group days-panel">
+                <div class="card col-xs-6 col-md-3 bg-dark text-light" data-day-no="0">
+                    <div class="card-header"></div>
+                    <img class="card-img-top" src="" alt="Card image">
+                    <div class="card-body text-center">
+                        <p class="card-text"></p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="temp-indicator"></div>
+                    </div>
+                </div>
+                <div class="card col-xs-6 col-md-3" data-day-no="1">
+                    <div class="card-header"></div>
+                    <img class="card-img-top" src="" alt="Card image">
+                    <div class="card-body text-center">
+                        <p class="card-text"></p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="temp-indicator"></div>
+                    </div>
+                </div>
+                <div class="card col-xs-6 col-md-3" data-day-no="2">
+                    <div class="card-header"></div>
+                    <img class="card-img-top" src="" alt="Card image">
+                    <div class="card-body text-center">
+                        <p class="card-text"></p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="temp-indicator"></div>
+                    </div>
+                </div>
+                <div class="card col-xs-6 col-md-3" data-day-no="3">
+                    <div class="card-header"></div>
+                    <img class="card-img-top" src="" alt="Card image">
+                    <div class="card-body text-center">
+                        <p class="card-text"></p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="temp-indicator"></div>
+                    </div>
+                </div>
+                <div class="card col-xs-6 col-md-3" data-day-no="4">
+                    <div class="card-header"></div>
+                    <img class="card-img-top" src="" alt="Card image">
+                    <div class="card-body text-center">
+                        <p class="card-text"></p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="temp-indicator"></div>
+                    </div>
+                </div>
+                <div class="card col-xs-6 col-md-3" data-day-no="5">
+                    <div class="card-header"></div>
+                    <img class="card-img-top" src="" alt="Card image">
+                    <div class="card-body text-center">
+                        <p class="card-text"></p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="temp-indicator"></div>
+                    </div>
+                </div>
+                <div class="card col-xs-6 col-md-3" data-day-no="6">
+                    <div class="card-header"></div>
+                    <img class="card-img-top" src="" alt="Card image">
+                    <div class="card-body text-center">
+                        <p class="card-text"></p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="temp-indicator"></div>
+                    </div>
+                </div>
+                <div class="card col-xs-6 col-md-3" data-day-no="7">
+                    <div class="card-header"></div>
+                    <img class="card-img-top" src="" alt="Card image">
+                    <div class="card-body text-center">
+                        <p class="card-text"></p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="temp-indicator"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-light">
+        <div class="bottom-bar float-right mr-4">~by Maciej Baryła</div>
+    </footer>
+    <div class="cookies-info-container d-flex justify-content-center">
+        <div id="cookiesInfo" class="alert bg-info text-light alert-dismissible p-1 fade show">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            Cookies info
+        </div>
+    </div>
+
+</body>
+
+</html>

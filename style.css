@@ -1,0 +1,164 @@
+/*Maciej Baryła*/
+
+body{
+    background-image: url("./img/bcg.jpeg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    height: 100vh;
+    background-color: #343a40;
+}
+
+#navIcon:hover, #navTitle:hover{
+    cursor: pointer;
+}
+
+#startContainer{
+    display: flex;
+    width: 100vw;
+}
+
+#startContainer label{
+    font-size: 20px;
+}
+
+.icon{
+    height: auto;
+    max-width: 60px;
+    width: 4vw;
+    min-width: 30px;
+}
+
+.main-text{
+    font-size: 3.5vh;
+}
+#forecastContainer .container{
+    background-color: rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgb(83, 83, 83);
+    border-right: 1px solid rgb(83, 83, 83);
+    border-radius: 0px 0px 10px 10px; 
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.cookies-info-container{
+    width: 100vw;
+    position: fixed;
+    bottom: 5;
+}
+
+#cookiesInfo{
+    display: inline-block;
+    min-width: 250px;
+    width: 20vw;
+    font-size: 12px;
+}
+
+#cookiesInfo button{
+    padding: 0px 5px;
+}
+
+.start-search{
+    width: 23vw;
+    min-width: 300px;
+    position: absolute;
+    top: 40vh;
+}
+
+#startSearchBtn{
+    float: right;
+}
+.search-icon{
+    height: 20px;
+}
+.nav-search{
+    margin-left: auto;
+    margin-top: auto;
+}
+nav.navbar{
+    justify-content: normal;
+}
+.day-details, .days-panel{
+    min-height: 40vh;
+}
+.details-panel-left{
+    margin-right: 4vw;
+}
+.days-panel{
+    padding: 20px;
+    border-top: 1px solid rgb(243, 243, 243);
+}
+.days-panel .card{
+    height:180px;
+    min-width: 120px;
+    border-top: none;
+    border-color: rgb(192, 192, 192);
+    padding: 0px;
+}
+.days-panel .card-header{
+    padding: 5px;
+    font-size: 14px;
+}
+.days-panel .card-body{
+    padding: 0px;
+    font-size: 25px;
+    text-align: center;
+}
+.days-panel .card .card-footer{
+    padding: 0px;
+    height: 40px;
+    position: relative;
+}
+
+.card-img-top{
+    width: 50px;
+    margin: 10px auto;
+}
+
+.days-panel .card:hover{
+    background-color: #d2d2d2;
+    cursor: pointer;
+}
+
+.temp-indicator{
+    position: absolute;
+    width: 100%;
+    max-height: 40px;
+    background-color: rgb(219, 94, 44);
+    bottom: 0;
+}
+.text-danger.text-light{
+    color: #ff8793 !important;
+}
+#locationHeaer{
+    text-align: center;
+    margin: 10px;
+}
+
+#loadingPanel{
+    width: 100%;
+}
+#detailsTemp{
+    font-size: 12vh;
+}
+
+@media only screen and (max-width: 800px) {
+    #detailsIcon {
+        height: 80px;
+    }
+    #navSearchBtn, #startSearchBtn,
+    #navSearch .input-group{
+        width: 100%;
+    }
+    #navSearchBtn{
+        margin-top: 10px;
+    }
+
+    .details-panel-right{
+        font-size: 14px;
+    }
+}
